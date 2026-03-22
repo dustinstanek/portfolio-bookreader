@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In Who's Name — Dustin Stanek</title>
+
+  <!-- BookReader CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@internetarchive/bookreader@5.0.0-107/BookReader/BookReader.css">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #111;
+      overflow: hidden;
+    }
+    #BookReader {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="BookReader"></div>
+
+  <!-- BookReader JS dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@internetarchive/bookreader@5.0.0-107/BookReader/webcomponents-bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@internetarchive/bookreader@5.0.0-107/BookReader/jquery-3.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@internetarchive/bookreader@5.0.0-107/BookReader/BookReader.js"></script>
+
+  <script>
+    var defined_width = 2160;
+    var defined_height = 2700;
+
+    var defined_data = [
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/Q2850243596409442077640725512800/4x5__0000s_0001_BW-01-0dustin-R4-E044.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/H2850243596372548589493306409568/4x5__0000s_0003_BW-03-0dustin-R1-E010.jpeg' },
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/C2850243596354101845419596857952/4x5__0000s_0004_BW-04-0dustin-R7-E074.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/L2850243596335655101345887306336/4x5__0000s_0005_BW-05-0dustin-R2-E015.jpeg' },
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/R2850243596317208357272177754720/4x5__0000s_0006_BW-06-0dustin-R3-E025.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/Y2850243596298761613198468203104/4x5__0000s_0007_BW-07-0dustin-R1-E002.jpeg' },
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/Z2850243596261868125051049099872/4x5__0000s_0009_BW-07-0dustin-R7-E077.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/Q2850243596224974636903629996640/4x5__0000s_0011_BW-08-0dustin-R3-E031.jpeg' },
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/J2850243596206527892829920445024/4x5__0000s_0012_BW-08-0dustin-R6-E070.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/A2850243596188081148756210893408/4x5__0000s_0013_BW-09-0dustin-R7-E072.jpeg' },
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/Z2850243596169634404682501341792/4x5__0000s_0014_BW-10-0dustin-R2-E017.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/H2850243596132740916535082238560/4x5__0000s_0016_BW-11-0dustin-R1-E008.jpeg' },
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/H2850243596114294172461372686944/4x5__0000s_0017_BW-12-0dustin-R1-E007.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/I2850243596095847428387663135328/4x5__0000s_0018_BW-13-0dustin-R1-E006.jpeg' },
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/N2850243596077400684313953583712/4x5__0001s_0000_CLR-01-0dustin-R3-E036.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/I2850243596058953940240244032096/4x5__0001s_0001_CLR-02-0dustin-R3-E035_M.jpeg' },
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/X2850243596040507196166534480480/4x5__0001s_0002_CLR-03-0dustin-R4-E065.jpeg' },
+      ],
+      [
+        { width: defined_width, height: defined_height,
+          uri: 'https://freight.cargo.site/w/1500/i/X2850243595911379987650567619168/4x5__0001s_0006_CLR-07-0dustin-R4-E058.jpeg' },
+      ],
+    ];
+
+    var br = new BookReader({
+      data: defined_data,
+      bookTitle: "In Who's Name",
+      el: '#BookReader',
+      ui: 'embed',
+      mode: 2,
+      imagesBaseURL: 'https://cdn.jsdelivr.net/npm/@internetarchive/bookreader@5.0.0-107/BookReader/images/',
+      thumbnail: 'https://freight.cargo.site/w/400/i/Q2850243596409442077640725512800/4x5__0000s_0001_BW-01-0dustin-R4-E044.jpeg',
+      metadata: [
+        { label: 'Title', value: "In Who's Name" },
+        { label: 'Photographer', value: 'Dustin Stanek' },
+        { label: 'Format', value: '4x5 Film' },
+      ],
+    });
+
+    br.init();
+  </script>
+</body>
+</html>
